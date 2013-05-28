@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>crossfilter + maps</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="lib/d3.js"></script>
+    <script src="lib/crossfilter.js"></script>
+    <script src="chart.js"></script>
+    <script src="data.js"></script>
+    <script src="setup.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', init, false);
+    </script>
+  </head>
+
+  <body>
+    <div id="map-div"></div>
+    <div id="charts">
+      <div id="val-chart" class="chart">
+        <div class="title">Value 1</div>
+      </div>
+      <div id="val2-chart" class="chart">
+        <div class="title">Value 2</div>
+      </div>
+    </div>
+  </body>
+</html>

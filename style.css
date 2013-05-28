@@ -1,0 +1,63 @@
+/* mostly derived from crossfilter's default example */
+
+body {
+  font-family: "Helvetica Neue";
+}
+
+#charts {
+  padding: 10px 0;
+}
+
+.chart {
+  display: inline-block;
+  height: 151px;
+  margin: 0 20px 20px;
+
+}
+
+.reset {
+  padding-left: 1em;
+  font-size: smaller;
+  color: #ccc;
+}
+
+.background.bar {
+  fill: #ccc;
+}
+
+.foreground.bar {
+  fill: rgb(255, 101, 92);
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.brush rect.extent {
+  fill: steelblue;
+  fill-opacity: .125;
+}
+
+.brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+#val-chart {
+  width: 120px;
+}
+
+#val2-chart {
+  width: 420px;
+}
+
+#map-div {
+  width: 800px;
+  height: 480px;
+}
