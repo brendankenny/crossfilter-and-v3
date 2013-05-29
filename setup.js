@@ -106,6 +106,7 @@ function initCrossfilter() {
       .x(d3.scale.linear()
           .domain([0, 1000])
           .rangeRound([0, 40 * 10]))
+      .filter([75, 525])
   ];
 
   // bind charts to dom
