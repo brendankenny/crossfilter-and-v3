@@ -13,8 +13,7 @@ var val2Grouping;
 var charts;
 var domCharts;
 
-var latDimension;
-var lngDimension;
+var latLngDimension;
 var idDimension;
 var idGrouping;
 
@@ -23,16 +22,12 @@ function init() {
   initCrossfilter();
 
   // bind map bounds to lat/lng filter dimensions
-  latDimension = filter.dimension(function(p) { return p.lat; });
-  lngDimension = filter.dimension(function(p) { return p.lng; });
+  latLngDimension = filter.dimension(function(p) { return new google.maps.LatLng(p.lat, p.lng); });
   google.maps.event.addListener(map, 'bounds_changed', function() {
     var bounds = this.getBounds();
-    var northEast = bounds.getNorthEast();
-    var southWest = bounds.getSouthWest();
 
-    // NOTE: need to be careful with the dateline here
-    lngDimension.filterRange([southWest.lng(), northEast.lng()]);
-    latDimension.filterRange([southWest.lat(), northEast.lat()]);
+    // NOTE: Fixing the dateline issue here
+    latLngDimension.filterFunction(function(l){return bounds.contains(l);});
 
     // NOTE: may want to debounce here, perhaps on requestAnimationFrame
     updateCharts();
